@@ -31,7 +31,7 @@ def plot_simulated_paths(S0, T, r, sigma, model="vanilla", steps=252, paths=10):
     return fig
 
 # -- Usage Guide --
-with st.expander("🧪 How to Use This Dashboard", expanded=False):
+with st.expander("🧪 How to Use This Dashboard", expanded=True):
     st.markdown("""
     Use the **sidebar** to set your option pricing simulation parameters:
 
@@ -99,7 +99,7 @@ if st.sidebar.button("🔄 Run Simulation"):
         if bs_price:
             col2.metric(label="Black-Scholes Price", value=f"${bs_price:.4f}")
 
-        st.markdown("### 🧮 Option Greeks")
+        st.markdown("### Option Greeks")
         gcol1, gcol2, gcol3 = st.columns(3)
         gcol1.metric("Delta", f"{greeks['delta']:.4f}")
         gcol1.metric("Gamma", f"{greeks['gamma']:.4f}")
@@ -132,15 +132,15 @@ if st.sidebar.button("🔄 Run Simulation"):
             fig2 = plot_simulated_paths(S0, T, r, sigma, model_type)
             st.pyplot(fig2)
 
-        with st.expander("🧠 How to Interpret the Results", expanded=True):
+        with st.expander("🧠 How to Interpret the Results", expanded=False):
             st.markdown("""
             **Monte Carlo Price**  
             - Estimated using simulated future price paths under geometric Brownian motion.  
             - Reflects the average payoff discounted to today’s value.
 
             **Black-Scholes Price**  
-            - Calculated using a closed-form formula (shown only for vanilla options).  
-            - Acts as a benchmark — if your Monte Carlo estimate is close, your model is behaving as expected.
+            - Calculated using a closed-form formula (vanilla options).  
+            - Acts as a benchmark.
 
             **Option Greeks**  
             - **Delta**: How much the option price changes with a $1 move in the stock price.  
