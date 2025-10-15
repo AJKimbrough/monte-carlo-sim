@@ -8,8 +8,8 @@ from monte_carlo import monte_carlo_option_price, asian_option_price, barrier_op
 from black_scholes import black_scholes_price
 from greeks import compute_greeks
 
-st.set_page_config(page_title="Option Pricing Simulator", layout="wide")
-st.markdown("<h1 style='text-align: center;'>📈 Monte Carlo Option Pricing Simulator</h1>", unsafe_allow_html=True)
+st.set_page_config(page_title="Alea Optionum", layout="wide")
+st.markdown("<h1 style='text-align: center;'> Alea Optionum - Monte Carlo Option Pricing Simulator</h1>", unsafe_allow_html=True)
 
 # -- Helper function to visualize sample paths --
 def plot_simulated_paths(S0, T, r, sigma, model="vanilla", steps=252, paths=10):
@@ -31,7 +31,7 @@ def plot_simulated_paths(S0, T, r, sigma, model="vanilla", steps=252, paths=10):
     return fig
 
 # -- Usage Guide --
-with st.expander("🧪 How to Use This Dashboard", expanded=True):
+with st.expander("How to Use This Dashboard", expanded=True):
     st.markdown("""
     Use the **sidebar** to set your option pricing simulation parameters:
 
@@ -53,7 +53,7 @@ with st.expander("🧪 How to Use This Dashboard", expanded=True):
 
 # --- Sidebar Inputs ---
 st.sidebar.header("Simulation Parameters")
-ticker = st.sidebar.text_input("📈 Ticker Symbol (pulls S₀ & σ from Yahoo Finance)", value="AAPL")
+ticker = st.sidebar.text_input("Ticker Symbol (pulls S₀ & σ from Yahoo Finance)", value="AAPL")
 use_yahoo = st.sidebar.checkbox("Use Yahoo Finance data", value=True)
 
 if use_yahoo:
@@ -132,7 +132,7 @@ if st.sidebar.button("🔄 Run Simulation"):
             fig2 = plot_simulated_paths(S0, T, r, sigma, model_type)
             st.pyplot(fig2)
 
-        with st.expander("🧠 How to Interpret the Results", expanded=False):
+        with st.expander("How to Interpret the Results", expanded=False):
             st.markdown("""
             **Monte Carlo Price**  
             - Estimated using simulated future price paths under geometric Brownian motion.  
