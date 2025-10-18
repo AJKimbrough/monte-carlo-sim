@@ -11,7 +11,6 @@ from greeks import compute_greeks
 st.set_page_config(page_title="Alea Optionum", layout="wide")
 st.markdown("<h1 style='text-align: center;'> Alea Optionum - Monte Carlo Option Pricing Simulator</h1>", unsafe_allow_html=True)
 
-# -- Helper function to visualize sample paths --
 def plot_simulated_paths(S0, T, r, sigma, model="vanilla", steps=252, paths=10):
     dt = T / steps
     np.random.seed(42)
@@ -30,7 +29,7 @@ def plot_simulated_paths(S0, T, r, sigma, model="vanilla", steps=252, paths=10):
     ax.grid(True, linestyle='--', alpha=0.3)
     return fig
 
-# -- Usage Guide --
+#Guide 
 with st.expander("How to Use This Dashboard", expanded=True):
     st.markdown("""
     Use the **sidebar** to set your option pricing simulation parameters:
@@ -51,7 +50,7 @@ with st.expander("How to Use This Dashboard", expanded=True):
     - View option Greeks: Delta, Gamma, Vega, Theta, Rho
     """)
 
-# --- Sidebar Inputs ---
+#Sidebar
 st.sidebar.header("Simulation Parameters")
 ticker = st.sidebar.text_input("Ticker Symbol (pulls S₀ & σ from Yahoo Finance)", value="AAPL")
 use_yahoo = st.sidebar.checkbox("Use Yahoo Finance data", value=True)
@@ -76,12 +75,11 @@ N = st.sidebar.slider("Number of Simulations", min_value=1000, max_value=500000,
 model_type = st.sidebar.selectbox("Model Type", ["vanilla", "asian", "barrier"])
 show_paths = st.sidebar.checkbox("📉 Show Sample Simulated Paths", value=True)
 
-# Barrier inputs only if selected
+#Barrier inputs 
 if model_type == "barrier":
     barrier_type = st.sidebar.selectbox("Barrier Type", ["up-and-in", "up-and-out", "down-and-in", "down-and-out"])
     barrier_level = st.sidebar.number_input("Barrier Level", value=S0 * 1.1)
 
-# --- Run Simulation ---
 if st.sidebar.button("🔄 Run Simulation"):
     with st.spinner("Simulating..."):
         if model_type == "asian":

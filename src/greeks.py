@@ -27,7 +27,7 @@ def compute_greeks(S0, K, T, r, sigma, option_type='call'):
     return {
         'delta': delta,
         'gamma': gamma,
-        'vega': vega / 100,   # vega per 1% change in volatility
-        'theta': theta / 365, # theta per day
-        'rho': rho / 100      # rho per 1% change in rate
+        'vega': vega / 100,   #vega per 1% change in volatility
+        'theta': theta / 365, #theta per day
+        'rho': rho / 100      #rho per 1% change in rate
     }

@@ -29,7 +29,7 @@ def monte_carlo_option_price(S0, K, T, r, sigma, N, option_type='call', return_p
 
 def asian_option_price(S0, K, T, r, sigma, N, option_type='call', return_paths=False):
     np.random.seed(42)
-    M = 252  # daily steps in a year
+    M = 252  #Daily steps in 1 year
     dt = T / M
     paths = np.zeros((N, M + 1))
     paths[:, 0] = S0

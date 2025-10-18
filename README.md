@@ -1,28 +1,27 @@
-# 📈 Monte Carlo Option Pricing Simulator
+# Monte Carlo Option Pricing Simulator
 
 An interactive Streamlit-based web application to simulate and price European options using Monte Carlo methods and compare the results with the Black-Scholes analytical model. This dashboard also calculates core option Greeks and visualizes the distribution of terminal prices.
 
 ---
 
-## 🚀 Features
+## Features
 
-- 🧠 **Monte Carlo simulation** for European call and put options
-- 📘 **Black-Scholes formula** benchmark for accuracy comparison
-- 🧮 **Option Greeks**: Delta, Gamma, Vega, Theta, Rho
-- 📊 **Interactive histogram** of simulated end prices ($S_T$)
-- 📥 **Downloadable CSV** of simulated prices
-- 💡 **Collapsible sections** for input help and result interpretation
-
----
-
-## 🖥️ Live Demo
-
-▶️ **Coming soon via Streamlit Cloud**  
-*(Will be linked here once deployed)*
+ - **Monte Carlo simulation** for European call and put options
+ -  **Black-Scholes formula** benchmark for accuracy comparison
+ -  **Option Greeks**: Delta, Gamma, Vega, Theta, Rho
+ -  **Interactive histogram** of simulated end prices ($S_T$)
+ -  **Downloadable CSV** of simulated prices
+ -  **Collapsible sections** for input help and result interpretation
 
 ---
 
-## 🛠️ Installation
+## Live Demo
+
+https://ajmonte-carlo-sim.streamlit.app/
+
+---
+
+## Installation
 
 Clone this repo and install dependencies:
 
@@ -34,7 +33,7 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ Running the App
+## Running the App
 
 ```bash
 streamlit run app/dashboard.py
@@ -44,7 +43,7 @@ The app will launch in your browser at `http://localhost:8501`.
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 monte-carlo-option-pricing/
@@ -63,10 +62,10 @@ monte-carlo-option-pricing/
 
 ---
 
-## 📘 How to Use
+## How to Use
 
 1. Input your simulation parameters in the sidebar
-2. Click **🔄 Run Simulation**
+2. Click **Run Simulation**
 3. View:
    - Monte Carlo and Black-Scholes prices
    - Option Greeks
@@ -75,7 +74,7 @@ monte-carlo-option-pricing/
 
 ---
 
-## 📈 Option Greeks Explained
+## Option Greeks Explained
 
 | Greek   | Meaning                             |
 |---------|-------------------------------------|
@@ -89,21 +88,21 @@ All computed using the Black-Scholes model.
 
 ---
 
-## 📘 License
+## License
 
 This project is licensed under the MIT License.
 
 ---
 
-## ✍️ Author
+## Author
 
-**Amber Kimbrough**  
-Quant-minded Software Engineer and HWPO Training Ambassador  
+**AJ Kimbrough**  
+Quant-minded Software Engineer 
 [LinkedIn](https://www.linkedin.com/in/amber-kimbrough) | [GitHub](https://github.com/AJKimbrough)
 
 ---
 
-## 📌 TODO / Roadmap
+## TODO / Roadmap
 
 - [ ] Add support for Asian and Barrier options
 - [ ] Add Yahoo Finance integration for live S₀ / σ
